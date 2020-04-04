@@ -6,7 +6,7 @@ class InputDataService
 {
 
     /**
-     * get greatest value from sequnce 
+     * get greatest value from sequence 
      *
      * @param integer $number
      * @return integer
@@ -17,35 +17,35 @@ class InputDataService
     }
 
     /**
-     * generate sequnce structure
+     * generate sequence structure
      *
      * @param integer $number
      * @return array
      */
     private function generateSequence(int $number): array
     {
-        $sequnce = [];
+        $sequence = [];
 
-        for ($sequnceNumber = 0; $sequnceNumber <= $number; $sequnceNumber++) {
+        for ($sequenceNumber = 0; $sequenceNumber <= $number; $sequenceNumber++) {
 
-            // skip if value is less then 1
-            if ($sequnceNumber > 1) {
+            // skip if value is less then 2
+            if ($sequenceNumber > 1) {
 
-                if ($this->isNumberEven($sequnceNumber)) {   
+                if ($this->isNumberEven($sequenceNumber)) {   
                     // if number is even                  
-                    $sequnce[$sequnceNumber] = $sequnce[$sequnceNumber/2];
+                    $sequence[$sequenceNumber] = $sequence[$sequenceNumber/2];
                 } else {
                     // if number is not even   
-                    $sequnce[$sequnceNumber] = $sequnce[round($sequnceNumber/2, 0,PHP_ROUND_HALF_DOWN)] + $sequnce[round($sequnceNumber/2, 0, PHP_ROUND_HALF_UP)];
+                    $sequence[$sequenceNumber] = $sequence[round($sequenceNumber/2, 0,PHP_ROUND_HALF_DOWN)] + $sequence[round($sequenceNumber/2, 0, PHP_ROUND_HALF_UP)];
                 }
 
             } else {
-                $sequnce[$sequnceNumber] = $sequnceNumber;        
+                $sequence[$sequenceNumber] = $sequenceNumber;        
             }
             
         }
         
-        return $sequnce;
+        return $sequence;
     }
 
 
