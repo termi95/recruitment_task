@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row d-flex justify-content-center" style="padding-top:25%">
+            <div class="col-12 d-flex justify-content-center">
+                <h2>Oblicz największą wartość ciągu</h2>
+            </div>
+            <div class="col-md-6 text-light bg-dark" style="padding:2rem 2rem">
+                {{ form_start(form) }}
+                    {{ form_row(form.sizeOfSequence, {'label': 'Długość ciągu:', 'attr':{'class': 'form-control input-lg'}}) }}
+                    {{ form_widget(form.submit, {'label': 'Wyślij', 'attr':{'class':'btn btn-success'}}) }}
+                {{ form_end(form) }}
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <b>{{ message|default('')  }}<b/>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+{% endblock %}
