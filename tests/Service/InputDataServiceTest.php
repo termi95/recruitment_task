@@ -33,25 +33,4 @@ class InputDataServiceTest extends TestCase
             [64, 13],
         ];
     }
-
-    /**
-     * @dataProvider IsNumberEvenProvider
-     */
-    public function testIsNumberEven($value, $expected)
-    {
-        $inputDataService = new InputDataService();
-        $result = $inputDataService->isNumberEven($value);
-        
-        $this->assertEquals($expected, $result);
-    }
-
-    public function IsNumberEvenProvider()
-    {
-        return [
-            [1, false],
-            [2, true],
-            [-1, false],
-            [-2, true],
-        ];
-    }
 }
